@@ -1,3 +1,5 @@
+using ApiFuncoes.Services.V1;
+using ApiFuncoes.Services.V1.Interfaces;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 #region Add services to the container
 
 builder.Services.AddControllers();
+
+//Injeção de Dependencia
+builder.Services.AddScoped<INumeroExtencoService, NumeroExtencoService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //Informações Swagger

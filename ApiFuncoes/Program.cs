@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 
 //Injeção de Dependencia
 builder.Services.AddScoped<INumeroExtencoService, NumeroExtencoService>();
+builder.Services.AddScoped<ISomaArrayService, SomaArrayService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

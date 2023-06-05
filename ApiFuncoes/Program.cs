@@ -13,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<INumeroExtencoService, NumeroExtencoService>();
 builder.Services.AddScoped<ISomaArrayService, SomaArrayService>();
 builder.Services.AddScoped<IExpressaoMatematicaService, ExpressaoMatematicaService>();
+builder.Services.AddScoped(typeof(IObjetoUnicoService<>), typeof(ObjetoUnicoService<>));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

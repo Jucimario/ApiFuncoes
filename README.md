@@ -59,8 +59,64 @@ As seguintes ferramentas foram usadas na construção do projeto:
 	requisição: /api/v1/ExpressaoMatematica?expressao=1+2
 	
 	Resultado:
+	
 					  * 1+2 = 3
 					  * 7/2 = 3.5
 					  * 15*50/2 = 375
 					  * 182-3+8+52+10*50/2 = 489
 					  * ...
+					  
+					  
+#### Receber uma lista de objetos(Produto) e retornar uma nova lista sem objetos repetidos
+
+- `POST/ObjetoUnico`: Recebe uma lista de objeto no body da requisição (no caso Produto) e retorna uma nova lista com objetos unicos sem repetição, exemplo:
+	
+	requisição: /api/ObjetoUnico				
+		Body: [
+				{
+					"id": 1,
+					"nome": "Laranja"
+				},
+				{
+					"id": 3,
+					"nome": "Banana"
+				},
+				{
+					"id": 1,
+					"nome": "Laranja"
+				},
+				{
+					"id": 1,
+					"nome": "Laranja"
+				},
+				{
+					"id": 2,
+					"nome": "Limão"
+				},
+				{
+					"id": 3,
+					"nome": "Banana"
+				},
+				{
+					"id": 2,
+					"nome": "Limão"
+				}
+			]
+	
+	Resultado:
+
+					   [
+							{
+								"id": 1,
+								"nome": "Laranja"
+							},
+							{
+								"id": 2,
+								"nome": "Limão"
+							},
+							{
+								"id": 3,
+								"nome": "Banana"
+							}
+						]
+

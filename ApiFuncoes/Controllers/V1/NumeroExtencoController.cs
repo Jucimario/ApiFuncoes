@@ -20,12 +20,11 @@ public class NumeroExtencoController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status501NotImplemented)]
-    public ActionResult GetNumeroExtenso(long numero)
+    public ActionResult GetNumeroExtenso([FromRoute] long numero)
     {
         try
-        {
-            var numeroExtenso = _numeroExtencoService.NumeroExtenso(numero);
-            return Ok(numeroExtenso);
+        {            
+            return Ok(_numeroExtencoService.NumeroExtenso(numero));
         }
         catch (Exception ex)
         {

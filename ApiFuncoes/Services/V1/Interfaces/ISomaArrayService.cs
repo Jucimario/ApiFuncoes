@@ -2,5 +2,5 @@
 
 public interface ISomaArrayService
 {
-    public long SomaArray(long[] array);
+    public long SomaArray(long[] numeros);
 }

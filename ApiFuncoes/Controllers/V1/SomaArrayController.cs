@@ -1,5 +1,4 @@
 ﻿using ApiFuncoes.Services.V1.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiFuncoes.Controllers.V1;

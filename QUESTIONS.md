@@ -55,3 +55,123 @@ Nesse exercicio se não me engano desde a versão 3.5 do .net Framework é possi
 #### - Implementações e dificuldades encontrada
 
 Nesse exercicio utilizei a biblioteca (NCalc.NetCore) eu já a conhecia, certa vez precisei efetuar um calculo de uma massa de dados em .CSV da operadora VIVO em um projeto que desenmvolvemos na empresa Vikstar o calculo se baseava na quantidade de dados processados por instancia e maquinas disponiveis.
+
+###  Desafio 4 -  Receber uma lista de objetos(Produto) e retornar uma nova lista sem objetos repetidos
+
+- `POST/ObjetoUnico`: Recebe uma lista de objeto no body da requisição (no caso Produto) e retorna uma nova lista com objetos unicos sem repetição, exemplo:
+	
+	requisição: /api/ObjetoUnico				
+		Body: [
+				{
+					"id": 1,
+					"nome": "Laranja"
+				},
+				{
+					"id": 3,
+					"nome": "Banana"
+				},
+				{
+					"id": 1,
+					"nome": "Laranja"
+				},
+				{
+					"id": 1,
+					"nome": "Laranja"
+				},
+				{
+					"id": 2,
+					"nome": "Limão"
+				},
+				{
+					"id": 3,
+					"nome": "Banana"
+				},
+				{
+					"id": 2,
+					"nome": "Limão"
+				}
+			]
+	
+	Resultado:
+
+					  * [
+							{
+								"id": 1,
+								"nome": "Laranja"
+							},
+							{
+								"id": 2,
+								"nome": "Limão"
+							},
+							{
+								"id": 3,
+								"nome": "Banana"
+							}
+						]
+
+
+#### - Implementações e dificuldades encontrada
+
+Nesse exercicio usei a função Distinct porem a mesma não efetuava o filtro esperado, então ao estudar a documentação da microsoft entendi que, quando se trata de uma lista de tipos primitivos a sua comparação é através da comparação estrutural já no caso de objetos a comparação é referêncial e portanto não teremos o resultado esperado.
+a microsoft indica implementar a interface o IEquatable<T> na classe, e fazer a implementação dos metodos "Equals() eGetHashCode()" no objeto.
+
+Documentação usada:
+- [Enumerable.Distinct](https://learn.microsoft.com/pt-br/dotnet/api/system.linq.enumerable.distinct?view=net-6.0#system-linq-enumerable-distinct-1(system-collections-generic-ienumerable((-0))))
+- [IEquatable<T> Interface](https://learn.microsoft.com/pt-br/dotnet/api/system.iequatable-1?view=net-6.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

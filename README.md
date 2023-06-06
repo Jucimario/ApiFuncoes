@@ -25,8 +25,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - `POST/SomaArray`: Recebe um array no body da requisição com no maximo um milhao de números e retorna a soma de todos, exemplo:
 	
-	requisição: /api/v1/SomaArray				
+	requisição: /api/v1/SomaArray		
+
+
+	
 		Body: [1,2]
+		
+		
 	
 	Resultado:
 
@@ -41,8 +46,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - `POST/SomaArray`: Recebe um array no body da requisição com no maximo um milhao de números e retorna a soma de todos, exemplo:
 	
-	requisição: /api/v1/SomaArray				
+	requisição: /api/v1/SomaArray	
+
+	
 		Body: [1,2]
+		
+		
 	
 	Resultado:
 
@@ -58,6 +67,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 	
 	requisição: /api/v1/ExpressaoMatematica?expressao=1+2
 	
+	
+	
 	Resultado:
 	
 					  * 1+2 = 3
@@ -71,7 +82,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - `POST/ObjetoUnico`: Recebe uma lista de objeto no body da requisição (no caso Produto) e retorna uma nova lista com objetos unicos sem repetição, exemplo:
 	
-	requisição: /api/ObjetoUnico				
+	requisição: /api/ObjetoUnico
+	
+	
 		Body: [
 				{
 					"id": 1,
@@ -102,6 +115,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 					"nome": "Limão"
 				}
 			]
+			
 	
 	Resultado:
 

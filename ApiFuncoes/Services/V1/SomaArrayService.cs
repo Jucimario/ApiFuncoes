@@ -6,7 +6,7 @@ public class SomaArrayService : ISomaArrayService
 {
     public long SomaArray(long[] numeros)
     {
-        if (numeros.Length < 1) throw new ArgumentNullException(nameof(numeros));
+        if (numeros.Length < 1) throw new Exception($"Não há valores suficiente para efetuar o calculo.");
 
         if (numeros.Length > 1000000)
         {

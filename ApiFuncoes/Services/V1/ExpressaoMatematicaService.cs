@@ -11,8 +11,8 @@ public class ExpressaoMatematicaService : IExpressaoMatematicaService
     {
         foreach (var item in expressao.Replace(" ", "+"))
         {
-            if (!char.IsDigit(item) && !Operadores.Contains(item))               
-                throw new Exception($"Expressão não permitida.");              
+            if (!char.IsDigit(item) && !Operadores.Contains(item))
+                throw new Exception($"Expressão não permitida.");
         }
 
         return CalcularExpressaoMatematica(expressao);
@@ -22,8 +22,8 @@ public class ExpressaoMatematicaService : IExpressaoMatematicaService
     {
         try
         {
-            var expr = new Expression(expressao.Replace(" ","+"));
-            return (double)expr.Evaluate();
+            var expr = new Expression(expressao.Replace(" ", "+"));
+            return Convert.ToDouble(expr.Evaluate());
         }
         catch (Exception)
         {

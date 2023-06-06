@@ -8,21 +8,28 @@ public class ExpressaoMatematicaTest
 
     private readonly ExpressaoMatematicaService _serviceMock;
 
-  public ExpressaoMatematicaTest()
+    public ExpressaoMatematicaTest()
     {
         _testMock = new TestMock();
         _serviceMock = _testMock.ObterInstanciaMock<ExpressaoMatematicaService>();
     }
 
-    [Fact(DisplayName = "Efetua a soma de expressao matematica simples")]
+    [Theory(DisplayName = "Efetua a soma de expressao matematica simples")]
+    [InlineData("7/2", 3.5)]
+    [InlineData("7*2", 14)]
+    [InlineData("7+2", 9)]
+    [InlineData("7-2", 5)]
+    [InlineData("7/2+3*4-2", 13.5)]
+    [InlineData("7/2+3*4-2/2", 14.5)]
+    [InlineData("7/2+3*4-2/2+1", 15.5)]
+    [InlineData("7/2+3*4-2/2+1-1", 14.5)]
+    [InlineData("7/2+3*4-2/2+1-1+1", 15.5)]
+    [InlineData("7/2+3*4-2/2+1-1+1-1", 14.5)]
+    [InlineData("7/2+3*4-2/2+1-1+1-1+1", 15.5)]
     [Trait("Categoria", "ExpressaoMatematica")]
-    public void Retorna_A_Soma_De_Expressao_Matematica_Simples()
+    public void Retorna_A_Soma_De_Expressao_Matematica_Simples(string expressao, double esperado)
     {
-        // Arrange
-        var expressao = "7/2";
-        double esperado = 3.5;
-
-        // Act        
+        // Arrange + Act        
         var resultado = _serviceMock.ExpressaoMatematicaSimples(expressao);
 
         // Assert

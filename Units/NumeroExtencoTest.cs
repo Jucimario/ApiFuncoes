@@ -23,10 +23,10 @@ public class NumeroExtencoTest
     [InlineData(2000000, "Dois Milhões")]
     [InlineData(2536253652, "Dois Bilhões e Quinhentos e Trinta e Seis Milhões e Duzentos e Cinquenta e Três Mil e Seiscentos e Cinquenta e Dois")]
     [Trait("Categoria", "NumeroExtenso")]
-    public void Retorna_Numero_Por_Extenso(long numero, string esperado)   
+    public void Retorna_Numero_Por_Extenso(long numero, string esperado)
     {
         // Arrange + Act
-         var resultado = _serviceMock.NumeroExtenso(numero);
+        var resultado = _serviceMock.NumeroExtenso(numero);
 
         // Assert        
         Assert.Equal(esperado, resultado);

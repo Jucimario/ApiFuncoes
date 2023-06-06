@@ -2,13 +2,13 @@ using ApiFuncoes.Services.V1;
 
 namespace Units;
 
-public class SomaArrayTests
+public class SomaArrayTest
 {
     private readonly TestMock _testMock;
 
     private readonly SomaArrayService _serviceMock;
 
-    public SomaArrayTests()
+    public SomaArrayTest()
     {
         _testMock = new TestMock();
         _serviceMock = _testMock.ObterInstanciaMock<SomaArrayService>();
